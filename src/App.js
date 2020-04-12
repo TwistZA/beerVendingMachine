@@ -1,24 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import VendingMachine from "./VendingMachine.js";
+import Busch from "./Busch.js";
+import Corona from "./Corona.js";
+import Castle from "./Castle.js";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Switch,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="machineContainer">
+      <div className="App-nav">
+        <NavLink
+          exact
+          className="all-links"
+          activeClassName="active-link"
+          to="/VendingMachine"
         >
-          Learn React
-        </a>
-      </header>
+          Home
+        </NavLink>
+        <NavLink
+          exact
+          className="all-links"
+          activeClassName="active-link"
+          to="/Busch"
+        >
+          Busch
+        </NavLink>
+        <NavLink
+          exact
+          className="all-links"
+          activeClassName="active-link"
+          to="/Castle"
+        >
+          Castle
+        </NavLink>
+        <NavLink
+          exact
+          className="all-links"
+          activeClassName="active-link"
+          to="/Corona"
+        >
+          Corona
+        </NavLink>
+      </div>
+
+      <Switch>
+        <Route exact path="/" component={VendingMachine} />
+        <Route exact path="/VendingMachine" component={VendingMachine} />
+        <Route exact path="/Busch" component={Busch} />
+        <Route exact path="/Corona" component={Corona} />
+        <Route exact path="/Castle" component={Castle} />
+      </Switch>
     </div>
   );
 }
