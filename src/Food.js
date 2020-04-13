@@ -5,6 +5,7 @@ import TitleCard from "./TitleCard.js";
 export default class Food extends Component {
   render() {
     const url = `https:/source.unsplash.com/1600x900/?${this.props.name}`;
+    console.log("url=" + url);
     return (
       <div className="Food">
         <TitleCard>
