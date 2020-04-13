@@ -4,6 +4,7 @@ import VendingMachine from "./VendingMachine.js";
 import Busch from "./Busch.js";
 import Corona from "./Corona.js";
 import Castle from "./Castle.js";
+import FoodPage from "./FoodPage.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -47,6 +48,14 @@ function App() {
         >
           Corona
         </NavLink>
+        <NavLink
+          exact
+          className="all-links"
+          activeClassName="active-link"
+          to="/FoodPage"
+        >
+          Foods
+        </NavLink>
       </div>
 
       <Switch>
@@ -55,6 +64,7 @@ function App() {
         <Route exact path="/Busch" component={Busch} />
         <Route exact path="/Corona" component={Corona} />
         <Route exact path="/Castle" component={Castle} />
+        <Route exact path="/FoodPage" component={FoodPage} />
       </Switch>
     </div>
   );
